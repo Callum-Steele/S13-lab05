@@ -7,6 +7,7 @@ package edu.ucsb.cs56.S13.drawings.callum.simple;
  * because the parameters to the constructor are more convenient
  * 
  * @author P. Conrad
+ * @author Callum Steele
  * @version CS56, Spring 2013, UCSB
  */
 public class Circle extends java.awt.geom.Ellipse2D.Double implements java.awt.Shape
