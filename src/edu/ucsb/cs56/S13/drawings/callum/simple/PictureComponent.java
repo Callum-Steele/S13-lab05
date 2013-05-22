@@ -16,7 +16,7 @@ import java.awt.geom.GeneralPath; // combinations of lines and curves
    A component that draws a Picture by Phill Conrad
    
    @author Phill Conrad (original drawing)
-   @author YOUR NAME HERE (fixed the snowmans's head)
+   @author Callum Steele
    @version for UCSB CS56, S13
 
    
@@ -57,53 +57,58 @@ public class PictureComponent extends JComponent
       Rectangle house = new Rectangle(100, 200, 100, 100);
       g2.draw( house);
 
-       // lroof and rroof are the left and right sides of the roof,
-       Line2D.Double lroof = new Line2D.Double(100, 200, 150, 150);
-       Line2D.Double rroof = new Line2D.Double(150,150, 200,200);
-       
-       g2.draw(lroof);
-       g2.draw(rroof);
-
-       // now a snowman: three circles
-       // here we use constants, so that if we want to change 
-       // the dimensions later, or move the snowman around,
-       // it becomes easier.
-       // Instead of doing the math ourselves, and putting "hard coded numbers"
-       // in the constructors for the Ellipses, we let the computer do the math!
-       
-       final double bottomRadius = 20;
-       final double middleRadius = 15;
-       final double topRadius = 10;
-       final double snowManCenterBottomX = 400;
-       final double snowManCenterBottomY = 300;
-       
-       Circle snowManBottomCircle = 
-           new Circle
-           (
-             snowManCenterBottomX,
-             snowManCenterBottomY - bottomRadius,
-             bottomRadius
+      // lroof and rroof are the left and right sides of the roof,
+      Line2D.Double lroof = new Line2D.Double(100, 200, 150, 150);
+      Line2D.Double rroof = new Line2D.Double(150,150, 200,200);
+      
+      g2.draw(lroof);
+      g2.draw(rroof);
+      
+      // now a snowman: three circles
+      // here we use constants, so that if we want to change 
+      // the dimensions later, or move the snowman around,
+      // it becomes easier.
+      // Instead of doing the math ourselves, and putting "hard coded numbers"
+      // in the constructors for the Ellipses, we let the computer do the math!
+      
+      final double bottomRadius = 20;
+      final double middleRadius = 15;
+      final double topRadius = 10;
+      final double snowManCenterBottomX = 400;
+      final double snowManCenterBottomY = 300;
+      
+      Circle snowManBottomCircle = 
+	  new Circle
+	  (
+	   snowManCenterBottomX,
+	   snowManCenterBottomY - bottomRadius,
+	   bottomRadius
            );
       g2.draw(snowManBottomCircle);
       
       Circle snowManMiddleCircle = 
-           new Circle
-           (
-             snowManCenterBottomX,
-             snowManCenterBottomY - bottomRadius * 2 - middleRadius,
-             middleRadius
+	  new Circle
+	  (
+	   snowManCenterBottomX,
+	   snowManCenterBottomY - bottomRadius * 2 - middleRadius,
+	   middleRadius
            );
-       g2.draw(snowManMiddleCircle);
+      g2.draw(snowManMiddleCircle);
+       
+      // @@@ ADD CODE HERE TO DRAW THE TOP CIRCLE
+      
+      Circle snowManTopCircle =
+	  new Circle
+	  (
+	   snowManCenterBottomX,
+	   snowManCenterBottomY - bottomRadius * 2 - middleRadius * 2 - topRadius,
+	   topRadius
+	   );
+      g2.draw(snowManTopCircle);
 
-       // @@@ ADD CODE HERE TO DRAW THE TOP CIRCLE
-       
-       
-       // @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
-       
-       g2.drawString("A house and a snowman, by Phill Conrad", 20,20);
-       g2.drawString("Top of snowman added by YOUR NAME HERE", 20,40);
-    }
-
-        
-  
+      // @@@ FINALLY, SIGN AND LABEL YOUR DRAWING
+      
+      g2.drawString("A house and a snowman, by Phill Conrad", 20,20);
+      g2.drawString("Top of snowman added by Callum Steele", 20,40);
+   }   
 }
